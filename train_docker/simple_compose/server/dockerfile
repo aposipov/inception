@@ -1,0 +1,9 @@
+
+FROM python:latest
+
+ADD server.py /server/
+ADD index.html /server/
+
+# VOLUME /server
+
+WORKDIR /server/
