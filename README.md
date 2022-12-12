@@ -21,3 +21,8 @@ https://www.youtube.com/watch?v=IfakKN4Ub-8
 ```
 sudo apt install vim make git -y
 ```
+docker install
+```
+mkdir -p /home/${USER}/data/db
+mkdir -p /home/${USER}/data/wp
+```
