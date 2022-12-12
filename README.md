@@ -16,3 +16,8 @@ https://ru.hexlet.io/courses/docker-basics/lessons/docker-compose/theory_unit
 ## video
 https://www.youtube.com/watch?v=9e_FH3bDHBc  
 https://www.youtube.com/watch?v=IfakKN4Ub-8
+
+# commands
+```
+sudo apt install vim make git -y
+```
