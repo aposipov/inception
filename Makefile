@@ -13,18 +13,21 @@ all:
 			@echo -e "$(RED) make clean $(NC) for clean project!"
 			@echo -e "$(GREEN) make fclean $(NC) fclean!"
 			@echo -e "$(GREEN) make re $(NC) re!"
-
+			
 check:		
 			@echo -e "$(BLUE) images $(NC)"
 			@docker image ls
 			@echo -e "$(BLUE) containers $(NC)"
-			@docker container ls
+			@docker container ls -a
 			@echo -e "$(BLUE) volumes $(NC)"
 			@docker volume ls
 			@echo -e "$(BLUE) networks $(NC)"
 			@docker network ls
 			@echo -e "$(BLUE) docker ps $(NC)"
 			@docker ps
+
+up:			create-dir
+			docker-compose up 
 
 create-dir:	
 			@echo -e "$(GREEN) Create data directories $(NC)"
@@ -34,6 +37,8 @@ create-dir:
 clean-dir:	
 			@echo -e "$(RED) Delete data directories $(NC)"
 			@rm -rf /home/${USER}/data/
+
+
 
 clean:
 			$(RM) $(OBJ)
@@ -45,10 +50,24 @@ fclean:		clean
 
 re:			fclean all
 
-test:		$(NAME)
-			valgrind ./$(NAME)
+prune:		
+			@echo -e "$(RED) docker prune -f $(NC)"
+			@docker system prune -f
+
+
+################################################################################
 
 nginx:		
-			docker build -t nginx-inc ./srcs/requirements/nginx/
-			docker run -it nginx-inc /bin/sh
-			# --no-cache
+			docker build --no-cache -t nginx-inc ./srcs/requirements/nginx/
+			@echo -e "$(GREEN) build NGinx $(NC)"
+			docker run -it -p 1234:80 nginx-inc /bin/bash
+
+mariadb:
+			docker build --no-cache -t maridb-inc ./srcs/requirements/mariadb/
+			@echo -e "$(GREEN) build MariaDB $(NC)"
+			docker run -it mariadb-inc /bin/bash
+
+wordpress:
+			docker build --no-cache -t wordpress-inc ./srcs/requirements/wordpress/
+			@echo -e "$(GREEN) build WordPress $(NC)"
+			docker run -it wordpress-inc /bin/bash
