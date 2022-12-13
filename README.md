@@ -19,7 +19,7 @@ https://www.youtube.com/watch?v=IfakKN4Ub-8
 
 # commands
 ```
-sudo apt install vim make git -y
+sudo apt install -y vim make git
 ```
 docker install
 ```
