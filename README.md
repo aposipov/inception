@@ -26,3 +26,10 @@ docker install
 mkdir -p /home/${USER}/data/db
 mkdir -p /home/${USER}/data/wp
 ```
+transfer files ssh  
+```
+scp ~/test.txt user@host:documents
+```
+```
+tar czf - /home/user/file | ssh user@host tar -xvzf -C /home/remoteuser/
+```
