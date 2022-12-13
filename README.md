@@ -17,8 +17,8 @@ https://ru.hexlet.io/courses/docker-basics/lessons/docker-compose/theory_unit
 `docker run -it -v "$(pwd)":/tmp_test <image_name> /bin/bash`
 ## PID 1
 [Docker: правильный запуск процессов в контейнере с PID 1](https://it-lux.ru/docker-entrypoint-pid-1/)  
-[Проблема PID 1 zombie reaping в Докере](https://habr.com/ru/company/hexlet/blog/248519/)
-[http://linuxsql.ru/content/sobiraem-i-proveryaem-dockerfile-image](http://linuxsql.ru/content/sobiraem-i-proveryaem-dockerfile-image)
+[Проблема PID 1 zombie reaping в Докере](https://habr.com/ru/company/hexlet/blog/248519/)  
+[Dockerfile: cобираем и проверяем](http://linuxsql.ru/content/sobiraem-i-proveryaem-dockerfile-image)
 ## video
 [1. Настройка Docker. PHP+Nginx+MySQL](https://www.youtube.com/watch?v=9e_FH3bDHBc)  
 [2. Настройка Docker. MySQL контейнер, установка соединениея из PHP](https://www.youtube.com/watch?v=IfakKN4Ub-8)
