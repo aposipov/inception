@@ -19,8 +19,8 @@ https://ru.hexlet.io/courses/docker-basics/lessons/docker-compose/theory_unit
 [Docker: правильный запуск процессов в контейнере с PID 1](https://it-lux.ru/docker-entrypoint-pid-1/)  
 [Проблема PID 1 zombie reaping в Докере](https://habr.com/ru/company/hexlet/blog/248519/)
 ## video
-https://www.youtube.com/watch?v=9e_FH3bDHBc  
-https://www.youtube.com/watch?v=IfakKN4Ub-8
+[1. Настройка Docker. PHP+Nginx+MySQL](https://www.youtube.com/watch?v=9e_FH3bDHBc)  
+[](https://www.youtube.com/watch?v=IfakKN4Ub-8)
 
 # commands
 ```
