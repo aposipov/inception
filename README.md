@@ -19,7 +19,9 @@ https://github.com/rbiodies/Inception
 - [Проблема PID 1 zombie reaping в Докере](https://habr.com/ru/company/hexlet/blog/248519/)  
 - [Dockerfile: cобираем и проверяем](http://linuxsql.ru/content/sobiraem-i-proveryaem-dockerfile-image)
 ## NGinx
-[Самые распространенные ошибки синтаксиса Nginx](https://www.8host.com/blog/samye-rasprostranennye-oshibki-sintaksisa-nginx/)
+- [Beginner’s Guide](http://nginx.org/en/docs/beginners_guide.html)  
+- [Creating NGINX Plus and NGINX Configuration Files](https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/)
+- [Самые распространенные ошибки синтаксиса Nginx](https://www.8host.com/blog/samye-rasprostranennye-oshibki-sintaksisa-nginx/)
 ## video
 - [1. Настройка Docker. PHP+Nginx+MySQL](https://www.youtube.com/watch?v=9e_FH3bDHBc)  
 - [2. Настройка Docker. MySQL контейнер, установка соединениея из PHP](https://www.youtube.com/watch?v=IfakKN4Ub-8)
