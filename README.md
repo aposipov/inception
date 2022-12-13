@@ -33,6 +33,9 @@ https://github.com/rbiodies/Inception
 ```
 sudo apt update && apt upgrade -y && apt install -y vim make git
 ```
+```
+sudo apt install -y docker docker-compose && sudo usermod -aG docker $USER 
+```
 docker install
 ```
 mkdir -p /home/${USER}/data/db
