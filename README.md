@@ -6,7 +6,7 @@ https://github.com/rbiodies/Inception
   
 [Курс Stepik](https://stepik.org/course/123300/info)
   
-[Inception 10.05.22 (meunostu, aeclipso)](https://www.youtube.com/watch?v=Veuv7MjaIKQ)
+
   
 [как устроен докефайл](https://doka.guide/tools/dockerfile/)  
 [управление данными в докер](https://doka.guide/tools/docker-data-management/)  
@@ -28,6 +28,8 @@ https://github.com/rbiodies/Inception
 - [Создание самоподписанного SSL-сертификата для Nginx в Ubuntu 18.04](https://www.8host.com/blog/sozdanie-samopodpisannogo-ssl-sertifikata-dlya-nginx-v-ubuntu-18-04/)
 - [Самоподписанный SSL сертификат для nginx](https://og-dev.ru/articles/samopodpisannyy-ssl-sertifikat-dlya-nginx)
 ## video
+- [Inception 10.05.22 (meunostu, aeclipso)](https://www.youtube.com/watch?v=Veuv7MjaIKQ)
+- [Лекция по docker compose (inception)](https://www.youtube.com/watch?v=RuTp0US9IgY)
 - [1. Настройка Docker. PHP+Nginx+MySQL](https://www.youtube.com/watch?v=9e_FH3bDHBc)  
 - [2. Настройка Docker. MySQL контейнер, установка соединениея из PHP](https://www.youtube.com/watch?v=IfakKN4Ub-8)
 ## commands
