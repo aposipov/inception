@@ -20,9 +20,8 @@ https://ru.hexlet.io/courses/docker-basics/lessons/docker-compose/theory_unit
 [Проблема PID 1 zombie reaping в Докере](https://habr.com/ru/company/hexlet/blog/248519/)
 ## video
 [1. Настройка Docker. PHP+Nginx+MySQL](https://www.youtube.com/watch?v=9e_FH3bDHBc)  
-[](https://www.youtube.com/watch?v=IfakKN4Ub-8)
-
-# commands
+[2. Настройка Docker. MySQL контейнер, установка соединениея из PHP](https://www.youtube.com/watch?v=IfakKN4Ub-8)
+## commands
 ```
 sudo apt update && apt upgrade -y && apt install -y vim make git
 ```
