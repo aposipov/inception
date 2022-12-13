@@ -33,3 +33,4 @@ scp ~/test.txt user@host:documents
 ```
 tar czf - /home/user/file | ssh user@host tar -xvzf -C /home/remoteuser/
 ```
+`--no-install-recommends` `--no-cache`
