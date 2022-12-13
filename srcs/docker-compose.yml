@@ -1,0 +1,103 @@
+
+version: '3.9'
+
+services:
+
+  mariadb:
+    build: ./requirements/mariadb
+    image: mariadb_img
+    container_name: mariadb
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - api
+
+  wordpress:
+    build: ./requirements/wordpress
+    image: wordpress_img
+    container_name: wordpress
+    depends_on:
+      - mariadb
+    restart: always
+    volumes:
+      - wp-data:/var/www/wordpress
+    env_file:
+      - .env
+    networks:
+      - api
+
+  nginx:
+    build: ./requirements/nginx
+    image: nginx_img
+    container_name: nginx
+    depends_on:
+      - wordpress
+    restart: always
+    volumes:
+      - wp-data:/var/www/wordpress
+    networks:
+      - api
+    ports:
+      - "443:443"
+    
+  ftp:
+    build: ./requirements/bonus/ftp
+    image: ft_ftp
+    container_name: ftp
+    restart: always
+    volumes:
+      - wp-data:/var/www/wordpress
+    env_file:
+      - .env
+    networks:
+      - api
+    ports:
+      - "21:21"
+      - "21100-21110:21100-21110"
+
+  adminer:
+    build: ./requirements/bonus/adminer
+    image: ft_adminer
+    container_name: adminer
+    depends_on:
+      - mariadb
+    restart: always
+    volumes:
+      - wp-data:/var/www/wordpress
+    networks:
+      - api
+
+  redis:
+    build: ./requirements/bonus/redis
+    image: ft_redis
+    container_name: redis
+    restart: always
+    networks:
+      - api
+
+networks:
+
+  api:
+    name: lan
+    driver: bridge
+
+volumes:
+
+  wp-data:
+    name: wp-data
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/$USER/data/wp
+      
+  db-data:
+    name: db-data
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/$USER/data/db

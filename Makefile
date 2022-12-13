@@ -27,7 +27,7 @@ check:
 			@docker ps
 
 up:			create-dir
-			docker-compose up 
+			docker compose -f ./srcs/docker-compose.yml up 
 
 create-dir:	
 			@echo -e "$(GREEN) Create data directories $(NC)"
@@ -59,11 +59,12 @@ prune:
 
 nginx:		
 			docker build --no-cache -t nginx-inc ./srcs/requirements/nginx/
+			# docker build -t nginx-inc ./srcs/requirements/nginx/
 			@echo -e "$(GREEN) build NGinx $(NC)"
 			docker run -it -p 1234:80 nginx-inc /bin/bash
 
 mariadb:
-			docker build --no-cache -t maridb-inc ./srcs/requirements/mariadb/
+			docker build --no-cache -t mariadb-inc ./srcs/requirements/mariadb/
 			@echo -e "$(GREEN) build MariaDB $(NC)"
 			docker run -it mariadb-inc /bin/bash
 
