@@ -14,6 +14,27 @@ all:
 			@echo -e "$(GREEN) make fclean $(NC) fclean!"
 			@echo -e "$(GREEN) make re $(NC) re!"
 
+check:		
+			@echo -e "$(BLUE) images $(NC)"
+			@docker image ls
+			@echo -e "$(BLUE) containers $(NC)"
+			@docker container ls
+			@echo -e "$(BLUE) volumes $(NC)"
+			@docker volume ls
+			@echo -e "$(BLUE) networks $(NC)"
+			@docker network ls
+			@echo -e "$(BLUE) docker ps $(NC)"
+			@docker ps
+
+create-dir:	
+			@echo -e "$(GREEN) Create data directories $(NC)"
+			@mkdir -p /home/${USER}/data/db
+			@mkdir -p /home/${USER}/data/wp
+
+clean-dir:	
+			@echo -e "$(RED) Delete data directories $(NC)"
+			@rm -rf /home/${USER}/data/
+
 clean:
 			$(RM) $(OBJ)
 			@echo -e "$(RED)*.o files is clean!$(NC)"
@@ -26,3 +47,8 @@ re:			fclean all
 
 test:		$(NAME)
 			valgrind ./$(NAME)
+
+nginx:		
+			docker build -t nginx-inc ./srcs/requirements/nginx/
+			docker run -it nginx-inc /bin/sh
+			# --no-cache
