@@ -32,6 +32,8 @@ https://github.com/rbiodies/Inception
 - [Лекция по docker compose (inception)](https://www.youtube.com/watch?v=RuTp0US9IgY)
 - [1. Настройка Docker. PHP+Nginx+MySQL](https://www.youtube.com/watch?v=9e_FH3bDHBc)  
 - [2. Настройка Docker. MySQL контейнер, установка соединениея из PHP](https://www.youtube.com/watch?v=IfakKN4Ub-8)
+##
+[Команда SED в Linux/Unix с примерами](https://habr.com/ru/company/ruvds/blog/667490/)
 ## commands
 `docker run -it -v "$(pwd)":/tmp_test <image_name> /bin/bash`
 ```
