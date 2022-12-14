@@ -15,9 +15,9 @@ all:
 			@echo -e "$(GREEN) make re $(NC) re!"
 			
 check:		
-			@echo -e "$(BLUE) images $(NC)"
-			@docker image ls
-			@echo -e "$(BLUE) containers $(NC)"
+			@echo -e "$(BLUE) images all $(NC)"
+			@docker image ls -a
+			@echo -e "$(BLUE) containers all $(NC)"
 			@docker container ls -a
 			@echo -e "$(BLUE) volumes $(NC)"
 			@docker volume ls
@@ -54,21 +54,30 @@ prune:
 			@echo -e "$(RED) docker prune -f $(NC)"
 			@docker system prune -f
 
+portainer_install:	
+			docker volume create portainer_data
+			docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always\
+			-v /var/run/docker.sock:/var/run/docker.sock\
+			-v portainer_data:/data portainer/portainer-ce:2.11.1
+
+portainer:	
+			docker start portainer
 
 ################################################################################
 
 nginx:		
-			docker build --no-cache -t nginx-inc ./srcs/requirements/nginx/
-			# docker build -t nginx-inc ./srcs/requirements/nginx/
+			# docker build --no-cache -t nginx-inc ./srcs/requirements/nginx/
+			docker build -t nginx-inc ./srcs/requirements/nginx/
 			@echo -e "$(GREEN) build NGinx $(NC)"
-			docker run -it -p 1234:80 nginx-inc /bin/bash
+			docker run --rm -it -p 1234:443 -p 1235:80 nginx-inc bash
+			# docker run --rm -it -p 1234:443 nginx-inc
 
 mariadb:
 			docker build --no-cache -t mariadb-inc ./srcs/requirements/mariadb/
 			@echo -e "$(GREEN) build MariaDB $(NC)"
-			docker run -it mariadb-inc /bin/bash
+			docker run --rm -it mariadb-inc /bin/bash
 
 wordpress:
 			docker build --no-cache -t wordpress-inc ./srcs/requirements/wordpress/
 			@echo -e "$(GREEN) build WordPress $(NC)"
-			docker run -it wordpress-inc /bin/bash
+			docker run --rm -it wordpress-inc /bin/bash
