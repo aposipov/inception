@@ -1,9 +1,4 @@
-# inception
-
-https://github.com/codesshaman/inception  
-https://github.com/luta-wolf/inception  
-https://github.com/rbiodies/Inception  
-  
+## inception  
 [Курс Stepik](https://stepik.org/course/123300/info)
 ## docker
 - [как устроен докефайл](https://doka.guide/tools/dockerfile/)  
@@ -56,3 +51,7 @@ tar czf - /home/user/file | ssh user@host tar -xvzf -C /home/remoteuser/
 ```
 Debian apt install  `--no-install-recommends` `nocache` `&& rm -rf /var/lib/apt/lists/*`  
 In addition, when you clean up the apt cache by removing /var/lib/apt/lists it reduces the image size, since the apt cache is not stored in a layer. Since the RUN statement starts with apt-get update, the package cache is always refreshed prior to apt-get install.
+## github
+https://github.com/codesshaman/inception  
+https://github.com/luta-wolf/inception  
+https://github.com/rbiodies/Inception  
