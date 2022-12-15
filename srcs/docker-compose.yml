@@ -1,5 +1,5 @@
 
-version: '3.9'
+version: '3.7'
 
 services:
 
@@ -46,13 +46,11 @@ services:
 networks:
 
   api:
-    name: lan
     driver: bridge
 
 volumes:
 
   wp-data:
-    name: wp-data
     driver: local
     driver_opts:
       type: none
@@ -60,7 +58,6 @@ volumes:
       device: /home/$USER/data/wp
       
   db-data:
-    name: db-data
     driver: local
     driver_opts:
       type: none

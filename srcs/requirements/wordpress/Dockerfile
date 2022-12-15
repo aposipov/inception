@@ -20,6 +20,6 @@ COPY conf/start.sh /
 
 EXPOSE 9000
 
-ENTRYPOINT [ "/docker-entrypoint.sh" ]
+ENTRYPOINT [ "/start.sh" ]
 
 CMD [ "php-fpm8.1", "--nodaemonize" ]
