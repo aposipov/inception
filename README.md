@@ -22,6 +22,11 @@
 - [Создание самоподписанных сертификатов SSL для Apache в Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-20-04-ru)
 - [Создание самоподписанного SSL-сертификата для Nginx в Ubuntu 18.04](https://www.8host.com/blog/sozdanie-samopodpisannogo-ssl-sertifikata-dlya-nginx-v-ubuntu-18-04/)
 - [Самоподписанный SSL сертификат для nginx](https://og-dev.ru/articles/samopodpisannyy-ssl-sertifikat-dlya-nginx)
+## MariaDB
+- [Установка и настройка MySQL сервера MariaDB в виде контейнера Docker для продуктового использования](https://netpoint-dc.com/blog/ustanovka-i-nastroika-mysql-mariadb-v-vide-docker-dlya-produktovogo-ispolzovaniya/)
+## WordPress
+- [Установка WordPress на Debian 11 + Nginx](https://angald.ru/ustanovka-wordpress-na-debian-11-nginx/)
+- []()
 ## video
 - [Inception 10.05.22 (meunostu, aeclipso)](https://www.youtube.com/watch?v=Veuv7MjaIKQ)
 - [Лекция по docker compose (inception)](https://www.youtube.com/watch?v=RuTp0US9IgY)
