@@ -13,7 +13,7 @@ services:
     volumes:
       - db-data:/var/lib/mysql
     networks:
-      - api
+      - docker-newtwork
 
   wordpress:
     build: ./requirements/wordpress
@@ -27,7 +27,7 @@ services:
     env_file:
       - .env
     networks:
-      - api
+      - docker-newtwork
 
   nginx:
     build: ./requirements/nginx
@@ -39,13 +39,13 @@ services:
     volumes:
       - wp-data:/var/www/wordpress
     networks:
-      - api
+      - docker-newtwork
     ports:
       - "443:443"
 
 networks:
 
-  api:
+  docker-newtwork:
     driver: bridge
 
 volumes:

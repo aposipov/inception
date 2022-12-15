@@ -26,11 +26,17 @@ check:
 			@echo -e "$(BLUE) docker ps $(NC)"
 			@docker ps
 
+build:		
+			docker compose -f ./srcs/docker-compose.yml build
+
 up:			create-dir
-			docker compose -f ./srcs/docker-compose.yml up 
+			docker compose -f ./srcs/docker-compose.yml up --build
 
 down:		
 			docker compose -f ./srcs/docker-compose.yml down
+
+create-cert:
+			
 
 create-dir:	
 			@echo -e "$(GREEN) Create data directories $(NC)"
@@ -40,8 +46,6 @@ create-dir:
 clean-dir:	
 			@echo -e "$(RED) Delete data directories $(NC)"
 			@rm -rf /home/${USER}/data/
-
-
 
 clean:
 			$(RM) $(OBJ)
@@ -53,20 +57,25 @@ fclean:		clean
 
 re:			fclean all
 
+pre_eval:
+			docker stop $(docker ps -qa) \
+			|| docker rm $(docker ps -qa) \
+			|| docker rmi -f $(docker images -qa) \
+			|| docker volume rm $(docker volume ls -q) \
+			|| docker network rm $(docker network ls -q) 2> /dev/null
+			clean-dir
+
 prune:		
 			@echo -e "$(RED) docker prune -f $(NC)"
-			@docker system prune -f
+			@docker system prune --all --force --volumes
 
-portainer_install:	
+portainer:	
 			docker volume create portainer_data
 			docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always\
 			-v /var/run/docker.sock:/var/run/docker.sock\
 			-v portainer_data:/data portainer/portainer-ce:2.11.1
 
-portainer:	
-			docker start portainer
-
-################################################################################
+####################################DEBUG#######################################
 
 nginx:		
 			# docker build --no-cache -t nginx-inc ./srcs/requirements/nginx/
@@ -81,6 +90,7 @@ mariadb:
 			docker run --rm -it mariadb-inc /bin/bash
 
 wordpress:
-			docker build --no-cache -t wordpress-inc ./srcs/requirements/wordpress/
+			# docker build --no-cache -t wordpress-inc ./srcs/requirements/wordpress/
+			docker build -t wordpress-inc ./srcs/requirements/wordpress/
 			@echo -e "$(GREEN) build WordPress $(NC)"
-			docker run --rm -it wordpress-inc /bin/bash
+			docker run --rm -it wordpress-inc bash
