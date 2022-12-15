@@ -1,6 +1,6 @@
 ## inception  
 [Курс Stepik](https://stepik.org/course/123300/info)
-## docker
+## docker 🐋
 - [как устроен докефайл](https://doka.guide/tools/dockerfile/)  
 - [управление данными в докер](https://doka.guide/tools/docker-data-management/)  
 - [Практические рекомендации по работе с Docker для Python-разработчиков](https://habr.com/ru/company/wunderfund/blog/586778/)  
@@ -26,7 +26,11 @@
 - [Установка и настройка MySQL сервера MariaDB в виде контейнера Docker для продуктового использования](https://netpoint-dc.com/blog/ustanovka-i-nastroika-mysql-mariadb-v-vide-docker-dlya-produktovogo-ispolzovaniya/)
 ## WordPress
 - [Установка WordPress на Debian 11 + Nginx](https://angald.ru/ustanovka-wordpress-na-debian-11-nginx/)
-- []()
+- [Как установить WordPress на Debian 11](https://infoit.com.ua/linux/kak-ustanovit-wordpress-na-debian-11/)
+- [Как установить стек LAMP на Debian 11](https://infoit.com.ua/linux/debian/kak-ustanovit-stek-lamp-na-debian-11/)
+- [Развертывание Wordpress в Docker и установка его в командной строке](https://www.dmosk.ru/miniinstruktions.php?mini=wordpress-docker)
+- [Установка WordPress в виде контейнера Docker в Linux](https://netpoint-dc.com/blog/ustanovka-wordpress-v-vide-kontainera-docker-v-linux/)
+- [Быстрая установка и запуск WordPress в Docker с HTTPS](https://serveradmin.ru/install-wordpress-docker-https/)
 ## video
 - [Inception 10.05.22 (meunostu, aeclipso)](https://www.youtube.com/watch?v=Veuv7MjaIKQ)
 - [Лекция по docker compose (inception)](https://www.youtube.com/watch?v=RuTp0US9IgY)
