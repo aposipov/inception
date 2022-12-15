@@ -29,6 +29,9 @@ check:
 up:			create-dir
 			docker compose -f ./srcs/docker-compose.yml up 
 
+down:		
+			docker compose -f ./srcs/docker-compose.yml down
+
 create-dir:	
 			@echo -e "$(GREEN) Create data directories $(NC)"
 			@mkdir -p /home/${USER}/data/db
@@ -69,7 +72,7 @@ nginx:
 			# docker build --no-cache -t nginx-inc ./srcs/requirements/nginx/
 			docker build -t nginx-inc ./srcs/requirements/nginx/
 			@echo -e "$(GREEN) build NGinx $(NC)"
-			docker run --rm -it -p 1234:443 -p 1235:80 nginx-inc bash
+			docker run --rm -it -p 8443:443 -p 8880:80 -p 8890:90 nginx-inc bash
 			# docker run --rm -it -p 1234:443 nginx-inc
 
 mariadb:

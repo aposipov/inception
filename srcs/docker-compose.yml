@@ -42,41 +42,6 @@ services:
       - api
     ports:
       - "443:443"
-    
-  ftp:
-    build: ./requirements/bonus/ftp
-    image: ft_ftp
-    container_name: ftp
-    restart: always
-    volumes:
-      - wp-data:/var/www/wordpress
-    env_file:
-      - .env
-    networks:
-      - api
-    ports:
-      - "21:21"
-      - "21100-21110:21100-21110"
-
-  adminer:
-    build: ./requirements/bonus/adminer
-    image: ft_adminer
-    container_name: adminer
-    depends_on:
-      - mariadb
-    restart: always
-    volumes:
-      - wp-data:/var/www/wordpress
-    networks:
-      - api
-
-  redis:
-    build: ./requirements/bonus/redis
-    image: ft_redis
-    container_name: redis
-    restart: always
-    networks:
-      - api
 
 networks:
 

@@ -10,10 +10,10 @@ RUN apt update && apt install -y\
 	-subj "/C=RU/ST=Moscow/L=Moscow/O=42school/OU=/CN=lchristi.42.fr/emailAddress=lchristi@42.fr"\
         && rm -rf /var/lib/apt/lists/* 
 
-COPY conf/lchristi42fr /etc/nginx/sites-available/
+COPY conf/lchristi.42.fr /etc/nginx/sites-available/
 COPY tools/index.html /var/www/wordpress/
 
-RUN ln -s /etc/nginx/sites-available/lchristi42fr /etc/nginx/sites-enabled/lchristi42fr
+RUN ln -s /etc/nginx/sites-available/lchristi.42.fr /etc/nginx/sites-enabled/lchristi.42.fr
 
 # ENTRYPOINT ["nginx", "-g", "daemon off;"]
 
