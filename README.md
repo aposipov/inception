@@ -18,6 +18,7 @@
 - [Creating NGINX Plus and NGINX Configuration Files](https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/)
 - [How to Find Your Nginx Configuration Folder](https://www.howtogeek.com/devops/how-to-find-your-nginx-configuration-folder/)
 - [Самые распространенные ошибки синтаксиса Nginx](https://www.8host.com/blog/samye-rasprostranennye-oshibki-sintaksisa-nginx/)
+- [Алфавитный указатель директив](https://nginx.org/ru/docs/dirindex.html)
 ## SSL
 - [Создание самоподписанных сертификатов SSL для Apache в Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-20-04-ru)
 - [Создание самоподписанного SSL-сертификата для Nginx в Ubuntu 18.04](https://www.8host.com/blog/sozdanie-samopodpisannogo-ssl-sertifikata-dlya-nginx-v-ubuntu-18-04/)
