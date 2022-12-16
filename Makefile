@@ -81,8 +81,9 @@ nginx:
 			# docker build --no-cache -t nginx-inc ./srcs/requirements/nginx/
 			docker build -t nginx-inc ./srcs/requirements/nginx/
 			@echo -e "$(GREEN) build NGinx $(NC)"
-			docker run --rm -it -p 8443:443 -p 8880:80 -p 8888:8888 nginx-inc bash
+			# docker run --rm -it -p 8443:443 -p 8880:80 -p 8888:8888 nginx-inc bash
 			# docker run --rm -it -p 1234:443 nginx-inc
+			docker run --rm -p 8443:443 -p 8880:80 -p 8888:8888 nginx-inc
 
 mariadb:
 			docker build --no-cache -t mariadb-inc ./srcs/requirements/mariadb/
