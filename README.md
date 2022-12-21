@@ -35,6 +35,8 @@
 ## video
 - [Inception 10.05.22 (meunostu, aeclipso)](https://www.youtube.com/watch?v=Veuv7MjaIKQ)
 - [Лекция по docker compose (inception)](https://www.youtube.com/watch?v=RuTp0US9IgY)
+- [Основы Nginx > Playlist](https://www.youtube.com/watch?v=dHsv8EnhSgQ&list=PLhgRAQ8BwWFa7ulOkX0qi5UfVizGD_-Rc&index=1)
+- [Nginx > Playlist](https://www.youtube.com/playlist?list=PLc7C4rck3fYswuRgp9pI3NsAxehJwcNFD)
 - [NGINX с нуля до профи. Nginx что это, как работает, как парсит конфиги?](https://www.youtube.com/watch?v=ixfnxLqcLOs)
 - [Настройка nginx wordpress php-fpm. Nginx или apache для wordpress? Почему nginx?](https://www.youtube.com/watch?v=VF3VvP9v0Y8)
 - [Веб-сервер на реальном примере. Docker-compose, nginx, mysql, php-fpm, wordpress](https://www.youtube.com/watch?v=mKdwkV5p1xg&t=273s)
