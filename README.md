@@ -1,5 +1,5 @@
 ## inception  
-[Курс Stepik](https://stepik.org/course/123300/info)
+[Курс Stepik](https://stepik.org/course/123300/info) ✅
 ## docker 🐋
 - [как устроен докефайл](https://doka.guide/tools/dockerfile/)  
 - [управление данными в докер](https://doka.guide/tools/docker-data-management/)  
