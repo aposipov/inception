@@ -25,8 +25,11 @@
 - [Самоподписанный SSL сертификат для nginx](https://og-dev.ru/articles/samopodpisannyy-ssl-sertifikat-dlya-nginx)
 ## MariaDB
 - [Установка и настройка MySQL сервера MariaDB в виде контейнера Docker для продуктового использования](https://netpoint-dc.com/blog/ustanovka-i-nastroika-mysql-mariadb-v-vide-docker-dlya-produktovogo-ispolzovaniya/)
+## php-fpm
+- [Настройка PHP-FPM](https://losst.pro/nastrojka-php-fpm)
 ## WordPress
 - [Установка WordPress на Debian 11 + Nginx](https://angald.ru/ustanovka-wordpress-na-debian-11-nginx/)
+- [Установка WordPress с помощью Docker Compose](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-docker-compose-ru)
 - [Как установить WordPress на Debian 11](https://infoit.com.ua/linux/kak-ustanovit-wordpress-na-debian-11/)
 - [Как установить стек LAMP на Debian 11](https://infoit.com.ua/linux/debian/kak-ustanovit-stek-lamp-na-debian-11/)
 - [Развертывание Wordpress в Docker и установка его в командной строке](https://www.dmosk.ru/miniinstruktions.php?mini=wordpress-docker)
