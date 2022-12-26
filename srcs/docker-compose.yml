@@ -5,7 +5,7 @@ services:
 
   mariadb:
     build: ./requirements/mariadb
-    image: mariadb_img
+    image: mariadb_inc
     container_name: mariadb
     restart: always
     env_file:
@@ -17,13 +17,13 @@ services:
 
   wordpress:
     build: ./requirements/wordpress
-    image: wordpress_img
+    image: wordpress_inc
     container_name: wordpress
     depends_on:
       - mariadb
     restart: always
     volumes:
-      - wp-data:/var/www/wordpress
+      - wp-data:/var/www/wordpress/
     env_file:
       - .env
     networks:
@@ -31,18 +31,19 @@ services:
 
   nginx:
     build: ./requirements/nginx
-    image: nginx_img
+    image: nginx_inc
     container_name: nginx
     depends_on:
       - wordpress
     restart: always
     volumes:
-      - wp-data:/var/www/wordpress
+      - wp-data:/var/www/wordpress/
     networks:
       - docker-newtwork
     ports:
       - "443:443"
-
+      - "80:80"
+          
 networks:
 
   docker-newtwork:

@@ -45,17 +45,17 @@ create-dir:
 
 clean-dir:	
 			@echo -e "$(RED) Delete data directories $(NC)"
-			@rm -rf /home/${USER}/data/
+			@sudo rm -rf /home/${USER}/data/
 
-clean:
+cleanX:
 			$(RM) $(OBJ)
 			@echo -e "$(RED)*.o files is clean!$(NC)"
 
-fclean:		clean
+fcleanX:		clean
 			$(RM) $(NAME)
 			@echo -e "$(RED)All files is clean!$(NC)"
 
-re:			fclean all
+reX:			fclean all
 
 pre_eval:
 			docker stop $(docker ps -qa) \
@@ -63,8 +63,7 @@ pre_eval:
 			|| docker rmi -f $(docker images -qa) \
 			|| docker volume rm $(docker volume ls -q) \
 			|| docker network rm $(docker network ls -q) 2> /dev/null
-			clean-dir
-
+			#clean dir
 prune:		
 			@echo -e "$(RED) docker prune -f $(NC)"
 			@docker system prune --all --force --volumes
@@ -83,12 +82,12 @@ nginx:
 			@echo -e "$(GREEN) build NGinx $(NC)"
 			# docker run --rm -it -p 8443:443 -p 8880:80 -p 8888:8888 nginx-inc bash
 			# docker run --rm -it -p 1234:443 nginx-inc
-			docker run --rm -p 8443:443 -p 8880:80 -p 8888:8888 nginx-inc
+			docker run --rm -p 443:443 -p 80:80 nginx-inc
 
 mariadb:
 			docker build --no-cache -t mariadb-inc ./srcs/requirements/mariadb/
 			@echo -e "$(GREEN) build MariaDB $(NC)"
-			docker run --rm -it mariadb-inc /bin/bash
+			docker run --rm mariadb-inc
 
 wordpress:
 			# docker build --no-cache -t wordpress-inc ./srcs/requirements/wordpress/

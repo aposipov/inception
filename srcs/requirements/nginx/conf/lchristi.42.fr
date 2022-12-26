@@ -3,24 +3,29 @@
 
 server {
 
-    listen 443 ssl default_server;
-    listen [::]:443 ssl default_server;
-	
-    server_name lchristi.42.fr;
+    listen 443 ssl;
+    	
+    server_name localhost;
 	
     ssl_certificate /etc/ssl/certs/nginx-selfsigned.crt;
 	ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key;
-	ssl_protocols TLSv1.2 TLSv1.3;
+	ssl_protocols TLSv1.3;
 
-    root /var/www/worpress;
-    index index.php index.html index.htm;
+    root /var/www/wordpress/;
+    index index.php;
 
 	location / {
         try_files $uri $uri/ =404;
     }
 
+    location /status {
+		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+		fastcgi_index index.php;
+		include fastcgi_params;
+		fastcgi_pass wordpress:9000;
+	}
+
     location ~ \.php$ { 
-        try_files $uri =404;
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
         fastcgi_pass wordpress:9000;
         fastcgi_index index.php;
