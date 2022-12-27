@@ -85,7 +85,7 @@ nginx:
 			docker run --rm -p 443:443 -p 80:80 nginx-inc
 
 mariadb:
-			docker build --no-cache -t mariadb-inc ./srcs/requirements/mariadb/
+			docker build -t mariadb-inc ./srcs/requirements/mariadb/
 			@echo -e "$(GREEN) build MariaDB $(NC)"
 			docker run --rm mariadb-inc
 
@@ -94,3 +94,9 @@ wordpress:
 			docker build -t wordpress-inc ./srcs/requirements/wordpress/
 			@echo -e "$(GREEN) build WordPress $(NC)"
 			docker run --rm -it wordpress-inc bash
+
+adminer:	
+			docker build -t adminer-inc ./srcs/requirements/bonus/adminer/
+			@echo -e "$(GREEN) build Adminer $(NC)"
+			# docker run -it -p 8080:8080 --rm adminer-inc bash
+			docker run -p 8080:8080 --rm adminer-inc

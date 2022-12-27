@@ -44,6 +44,18 @@ services:
       - "443:443"
       - "80:80"
           
+  adminer:
+    build: ./requirements/bonus/adminer
+    image: adminer_inc
+    container_name: adminer
+    depends_on:
+      - mariadb
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+     - docker-newtwork
+      
 networks:
 
   docker-newtwork:

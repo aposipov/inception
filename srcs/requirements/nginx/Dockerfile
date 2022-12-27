@@ -19,5 +19,3 @@ ENTRYPOINT ["nginx", "-g", "daemon off;"]
 # conf +
 # ssl certif +
 # install -y procps htop
-
-EXPOSE 443
