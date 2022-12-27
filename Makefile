@@ -100,3 +100,9 @@ adminer:
 			@echo -e "$(GREEN) build Adminer $(NC)"
 			# docker run -it -p 8080:8080 --rm adminer-inc bash
 			docker run -p 8080:8080 --rm adminer-inc
+
+ftp:		
+			docker build -t ftp-inc ./srcs/requirements/bonus/ftp/
+			@echo -e "$(GREEN) build FTP $(NC)"
+			docker run -it -p 21:21 --rm ftp-inc bash
+			# docker run -p 21:21 --rm ftp-inc

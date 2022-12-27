@@ -55,6 +55,24 @@ services:
       - "8080:8080"
     networks:
      - docker-newtwork
+
+  ftp:
+    build:
+      context: .
+      dockerfile: requirements/bonus/ftp
+      args:
+        FTP_USR: ${FTP_USR}
+        FTP_PWD: ${FTP_PASS}
+    container_name: vsftpd
+    depends_on:
+      - wordpress
+    ports:
+      - "21:21"
+    volumes:
+      - wp-data:/var/www/
+    networks:
+     - inception
+    restart: always
       
 networks:
 
