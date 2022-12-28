@@ -76,7 +76,7 @@ portainer:
 
 yacht:		
 			docker volume create yacht
-			docker run -d -p 8000:8000 -v /var/run/docker.sock:/var/run/docker.sock\
+			docker run -d -p 8008:8008 -v /var/run/docker.sock:/var/run/docker.sock\
 			 -v yacht:/config --name yacht selfhostedpro/yacht
 			 #admin@yacht.local pass
 
@@ -117,4 +117,10 @@ redis:
 			docker build -t redis-inc ./srcs/requirements/bonus/redis/
 			@echo -e "$(GREEN) build Redis $(NC)"
 			docker run -it --rm redis-inc bash
-			# docker run -p 21:21 --rm redis-inc
+			# docker run --rm redis-inc
+
+django:
+			docker build -t django-inc ./srcs/requirements/bonus/website/
+			@echo -e "$(GREEN) build Django $(NC)"
+			# docker run -it -p 8001:8001 --rm django-inc bash
+			docker run -p 8001:8001 --rm django-inc
