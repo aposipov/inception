@@ -2,7 +2,7 @@
 FROM debian:buster
 
 RUN apt update && apt install -y --no-install-recommends \
-        wget php php-fpm php-mysql\
+        wget php php-fpm php-mysql php-redis \
         && rm -rf /var/lib/apt/lists/* 
       
 COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d/
@@ -35,3 +35,6 @@ ENTRYPOINT [ "php-fpm7.3", "-F" ]
 
 # wp config
 # php config
+# del php-redis
+# wp cli install
+# conf redis

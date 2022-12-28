@@ -57,12 +57,8 @@ services:
      - docker-newtwork
 
   ftp:
-    build:
-      context: .
-      dockerfile: requirements/bonus/ftp
-      args:
-        FTP_USR: ${FTP_USR}
-        FTP_PWD: ${FTP_PASS}
+    build: ./requirements/bonus/ftp
+    image: ftp_inc
     container_name: vsftpd
     depends_on:
       - wordpress
@@ -71,8 +67,16 @@ services:
     volumes:
       - wp-data:/var/www/
     networks:
-     - inception
+     - docker-newtwork
     restart: always
+  
+  redis:
+    build: ./requirements/bonus/redis
+    image: redis_inc
+    container_name: redis
+    restart: always
+    networks:
+      - docker-newtwork
       
 networks:
 

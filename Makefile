@@ -74,6 +74,12 @@ portainer:
 			-v /var/run/docker.sock:/var/run/docker.sock\
 			-v portainer_data:/data portainer/portainer-ce:2.11.1
 
+yacht:		
+			docker volume create yacht
+			docker run -d -p 8000:8000 -v /var/run/docker.sock:/var/run/docker.sock\
+			 -v yacht:/config --name yacht selfhostedpro/yacht
+			 #admin@yacht.local pass
+
 ####################################DEBUG#######################################
 
 nginx:		
@@ -106,3 +112,9 @@ ftp:
 			@echo -e "$(GREEN) build FTP $(NC)"
 			docker run -it -p 21:21 --rm ftp-inc bash
 			# docker run -p 21:21 --rm ftp-inc
+
+redis:		
+			docker build -t redis-inc ./srcs/requirements/bonus/redis/
+			@echo -e "$(GREEN) build Redis $(NC)"
+			docker run -it --rm redis-inc bash
+			# docker run -p 21:21 --rm redis-inc

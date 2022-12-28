@@ -8,7 +8,7 @@ RUN apt update && apt install -y --no-install-recommends \
         vsftpd \
         && rm -rf /var/lib/apt/lists/* 
 
-# COPY ./conf/vsftpd.conf /etc/vsftpd.conf
+COPY ./conf/vsftpd.conf /etc/vsftpd.conf
 
 # RUN adduser -h /var/www -s /bin/false -D ${FTP_USR} && \
 #     echo "${FTP_USR}:${FTP_PWD}" | /usr/sbin/chpasswd && \
@@ -27,4 +27,4 @@ RUN apt update && apt install -y --no-install-recommends \
 
 # EXPOSE 21
 
-# CMD [ "/usr/sbin/vsftpd", "/etc/vsftpd/vsftpd.conf" ]
+CMD [ "/usr/sbin/vsftpd", "/etc/vsftpd/vsftpd.conf" ]
