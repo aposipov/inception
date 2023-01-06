@@ -6,6 +6,7 @@
 - [Практические рекомендации по работе с Docker для Python-разработчиков](https://habr.com/ru/company/wunderfund/blog/586778/)  
 - [Как запустить веб-приложение на Nginx в Docker 🐳👨🏽‍💻](https://proglib.io/p/kak-zapustit-nginx-v-docker-2020-05-12)  
 - [Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+- [Docker ARG, ENV and .env - a Complete Guide](https://vsupalov.com/docker-arg-env-variable-guide/)
 ## docker-compose
 - [Руководство по Docker Compose для начинающих](https://habr.com/ru/company/ruvds/blog/450312/)  
 - [Основы Docker Compose](https://ru.hexlet.io/courses/docker-basics/lessons/docker-compose/theory_unit)  
