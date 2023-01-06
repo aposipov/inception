@@ -35,6 +35,9 @@
 - [Развертывание Wordpress в Docker и установка его в командной строке](https://www.dmosk.ru/miniinstruktions.php?mini=wordpress-docker)
 - [Установка WordPress в виде контейнера Docker в Linux](https://netpoint-dc.com/blog/ustanovka-wordpress-v-vide-kontainera-docker-v-linux/)
 - [Быстрая установка и запуск WordPress в Docker с HTTPS](https://serveradmin.ru/install-wordpress-docker-https/)
+## ftp
+- [Как установить и настроить FTP сервер vsftpd в Debian 11](https://setiwik.ru/kak-ustanovit-i-nastroit-ftp-server-vsftpd-v-debian-11/)
+- [Как установить FTP-сервер на Ubuntu](https://help.reg.ru/support/servery-vps/oblachnyye-servery/ustanovka-programmnogo-obespecheniya/kak-ustanovit-ftp-server-na-ubuntu)
 ## video
 - [Inception 10.05.22 (meunostu, aeclipso)](https://www.youtube.com/watch?v=Veuv7MjaIKQ)
 - [Лекция по docker compose (inception)](https://www.youtube.com/watch?v=RuTp0US9IgY)
