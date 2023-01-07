@@ -2,7 +2,7 @@
 FROM debian:buster
 
 RUN apt update && apt install -y --no-install-recommends \
-        wget php php-fpm php-mysql php-redis \
+        wget php php-fpm php-mysql php-redis procps\
         && rm -rf /var/lib/apt/lists/* 
       
 COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d/

@@ -27,13 +27,13 @@ check:
 			@docker ps
 
 build:		
-			docker compose -f ./srcs/docker-compose.yml build
+			docker-compose -f ./srcs/docker-compose.yml build
 
 up:			create-dir
-			docker compose -f ./srcs/docker-compose.yml up --build
+			docker-compose -f ./srcs/docker-compose.yml up --build
 
 down:		
-			docker compose -f ./srcs/docker-compose.yml down
+			docker-compose -f ./srcs/docker-compose.yml down
 
 create-cert:
 			
@@ -93,7 +93,7 @@ nginx:
 mariadb:
 			docker build -t mariadb-inc ./srcs/requirements/mariadb/
 			@echo -e "$(GREEN) build MariaDB $(NC)"
-			docker run --rm mariadb-inc
+			docker run --env-file ./srcs/.env --rm mariadb-inc
 
 wordpress:
 			# docker build --no-cache -t wordpress-inc ./srcs/requirements/wordpress/

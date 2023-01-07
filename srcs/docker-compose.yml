@@ -36,6 +36,8 @@ services:
     depends_on:
       - wordpress
     restart: always
+    env_file:
+      - .env
     volumes:
       - wp-data:/var/www/wordpress/
     networks:

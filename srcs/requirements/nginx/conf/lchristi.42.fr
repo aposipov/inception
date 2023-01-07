@@ -19,16 +19,29 @@ server {
     }
 
     location /status {
-		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-		fastcgi_index index.php;
-		include fastcgi_params;
 		fastcgi_pass wordpress:9000;
+		fastcgi_index index.php;
+		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+		include fastcgi_params;
 	}
 
+    location /check {
+        return 200 'hello from location check!';
+    }
+
+    location /adminer {
+       #return 301 http://localhost:8080;
+       proxy_pass http://localhost:8080;
+       #fastcgi_pass   adminer:8080;
+       #fastcgi_index  index.php;
+       #fastcgi_param  SCRIPT_FILENAME  /var/www/;
+       #include        fastcgi_params;
+    }
+
     location ~ \.php$ { 
-        fastcgi_split_path_info ^(.+\.php)(/.+)$;
         fastcgi_pass wordpress:9000;
         fastcgi_index index.php;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
         include fastcgi_params;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         fastcgi_param PATH_INFO $fastcgi_path_info;

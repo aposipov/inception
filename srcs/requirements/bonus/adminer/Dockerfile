@@ -10,4 +10,9 @@ RUN apt update && apt install -y --no-install-recommends \
 
 # ENTRYPOINT [ "php", "-S", "[::]:8080", "-t", "/var/www/" ]
 
+# COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d/ 
+
+# RUN chown -R www-data:www-data /var/www/* \
+    # && chmod 755 -R /var/www/* 
+
 CMD	[ "php", "-S", "[::]:8080", "-t", "/var/www" ]

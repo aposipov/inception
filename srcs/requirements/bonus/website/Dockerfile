@@ -16,3 +16,5 @@ ENTRYPOINT [ "python3", "./home/prj/first/manage.py", "runserver", "0.0.0.0:8001
 # django-admin startproject first
 # python3 ./manage.py runserver 0.0.0.0<port>
 # python3-dev
+
+# python3 ./manage.py startapp mypage
