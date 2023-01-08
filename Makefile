@@ -117,6 +117,11 @@ redis:
 			docker run -it --rm redis-inc bash
 			# docker run --rm redis-inc
 
+cadvisor:
+			docker build -t cadvisor-inc ./srcs/requirements/mariadb/
+			@echo -e "$(GREEN) build cadvisor $(NC)"
+			docker run --env-file ./srcs/.env --rm cadvisor-inc
+
 django:
 			docker build -t django-inc ./srcs/requirements/bonus/django/
 			@echo -e "$(GREEN) build Django $(NC)"
