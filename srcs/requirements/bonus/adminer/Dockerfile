@@ -2,7 +2,7 @@
 FROM debian:buster
 
 RUN apt update && apt install -y --no-install-recommends \
-        wget php php-mysql\
+        wget php7.3 php-fpm php-mysql\
         && rm -rf /var/lib/apt/lists/* \
         && mkdir -p var/www/ \
         &&  wget --no-check-certificate -O  /var/www/index.php \
@@ -11,8 +11,11 @@ RUN apt update && apt install -y --no-install-recommends \
 # ENTRYPOINT [ "php", "-S", "[::]:8080", "-t", "/var/www/" ]
 
 # COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d/ 
+# RUN mkdir /run/php/
 
-# RUN chown -R www-data:www-data /var/www/* \
-    # && chmod 755 -R /var/www/* 
+# RUN chown -R www-data:www-data /var/www \
+    # && chmod 755 -R /var/www 
 
 CMD	[ "php", "-S", "[::]:8080", "-t", "/var/www" ]
+
+# CMD [ "php-fpm7.3", "-F"]

@@ -1,7 +1,6 @@
 #!/bin/bash
-
-if ! [ -d "/var/lib/mysql/wordpress" ]; then
-    echo "***START SETUP***"
+echo "***START SETUP DB***"
+if ! [ -d "/var/lib/mysql/wp_db" ]; then
     service mysql start
     mysql -u root -e "CREATE DATABASE IF NOT EXISTS $DB_NAME DEFAULT CHARACTER SET utf8;"
     mysql -u root -e "CREATE USER '$DB_USER'@'%' IDENTIFIED BY '$DB_PASS';"
@@ -12,4 +11,5 @@ if ! [ -d "/var/lib/mysql/wordpress" ]; then
 fi
 
 # exec $@
+echo "***START DB***"
 exec /usr/bin/mysqld_safe

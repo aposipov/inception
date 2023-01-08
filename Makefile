@@ -10,9 +10,7 @@ all:
 			@echo -e "$(GREEN) \n make buid $(NC) for build project!"
 			@echo -e "$(GREEN) make up $(NC) for build and up project!"
 			@echo -e "$(GREEN) make down $(NC) for down project!"
-			@echo -e "$(RED) make clean $(NC) for clean project!"
-			@echo -e "$(GREEN) make fclean $(NC) fclean!"
-			@echo -e "$(GREEN) make re $(NC) re!"
+			@echo -e "$(RED) make prune $(NC) prune files!"
 			
 check:		
 			@echo -e "$(BLUE) images all $(NC)"
@@ -37,7 +35,6 @@ down:
 
 create-cert:
 			
-
 create-dir:	
 			@echo -e "$(GREEN) Create data directories $(NC)"
 			@mkdir -p /home/${USER}/data/db
@@ -99,7 +96,8 @@ wordpress:
 			# docker build --no-cache -t wordpress-inc ./srcs/requirements/wordpress/
 			docker build -t wordpress-inc ./srcs/requirements/wordpress/
 			@echo -e "$(GREEN) build WordPress $(NC)"
-			docker run --rm -it wordpress-inc bash
+			# docker run --rm -it wordpress-inc bash
+			docker run --rm wordpress-inc
 
 adminer:	
 			docker build -t adminer-inc ./srcs/requirements/bonus/adminer/

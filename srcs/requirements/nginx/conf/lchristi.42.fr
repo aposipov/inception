@@ -30,8 +30,8 @@ server {
     }
 
     location /adminer {
-       #return 301 http://localhost:8080;
-       proxy_pass http://localhost:8080;
+       return 301 http://localhost:8080;
+       #proxy_pass http://localhost:8080;
        #fastcgi_pass   adminer:8080;
        #fastcgi_index  index.php;
        #fastcgi_param  SCRIPT_FILENAME  /var/www/;

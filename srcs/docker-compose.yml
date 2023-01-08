@@ -58,20 +58,6 @@ services:
     networks:
      - docker-newtwork
 
-  ftp:
-    build: ./requirements/bonus/ftp
-    image: ftp_inc
-    container_name: vsftpd
-    depends_on:
-      - wordpress
-    ports:
-      - "21:21"
-    volumes:
-      - wp-data:/var/www/
-    networks:
-     - docker-newtwork
-    restart: always
-  
   redis:
     build: ./requirements/bonus/redis
     image: redis_inc
@@ -79,7 +65,21 @@ services:
     restart: always
     networks:
       - docker-newtwork
-      
+
+  # ftp:
+  #   build: ./requirements/bonus/ftp
+  #   image: ftp_inc
+  #   container_name: vsftpd
+  #   depends_on:
+  #     - wordpress
+  #   ports:
+  #     - "21:21"
+  #   volumes:
+  #     - wp-data:/var/www/
+  #   networks:
+  #    - docker-newtwork
+  #   restart: always
+        
 networks:
 
   docker-newtwork:
