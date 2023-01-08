@@ -22,7 +22,7 @@ wp user create --allow-root --path="/var//www/wordpress/"\
                 $WP_USER $WP_UMAIL\
                 --role=$WP_UROLE\
                 --user_pass=$WP_PASS
-wp config set --allow-root --path="/var//www/wordpress/" WP_MEMORY_LIMIT 256M
+# wp config set --allow-root --path="/var//www/wordpress/" WP_MEMORY_LIMIT 256M
 wp config set --allow-root --path="/var//www/wordpress/" WP_REDIS_HOST redis
 wp config set --allow-root --path="/var//www/wordpress/" WP_REDIS_PORT 6379 --raw
 wp config set --allow-root --path="/var//www/wordpress/" WP_REDIS_DATABASE 0 --raw

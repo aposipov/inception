@@ -118,7 +118,7 @@ redis:
 			# docker run --rm redis-inc
 
 django:
-			docker build -t django-inc ./srcs/requirements/bonus/website/
+			docker build -t django-inc ./srcs/requirements/bonus/django/
 			@echo -e "$(GREEN) build Django $(NC)"
 			# docker run -it -p 8001:8001 --rm django-inc bash
 			docker run -p 8001:8001 --rm django-inc

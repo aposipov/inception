@@ -25,3 +25,4 @@ ENTRYPOINT [ "./tmp/setup.sh" ]
 # script env
 # secure install
 # restart after setup db user
+# tini from script exec tini -- mysqld_safe
