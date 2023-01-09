@@ -1,14 +1,14 @@
 
 FROM debian:buster
 
+COPY ./tools/setup.sh /tmp/
+
 RUN apt update && apt install -y --no-install-recommends \
         vsftpd procps &&\
         rm -rf /var/lib/apt/lists/* &&\
-        mkdir -p /var/www/wordpress/  
+        mkdir -p /var/www/wordpress/ &&\
+        chmod +x /tmp/setup.sh
 
 COPY ./conf/vsftpd.conf /etc/vsftpd.conf
-COPY ./tools/setup.sh /tmp/
-RUN chmod +x /tmp/setup.sh
 
 ENTRYPOINT [ "./tmp/setup.sh" ]
-# CMD [ "/usr/sbin/vsftpd", "/etc/vsftpd.conf" ]

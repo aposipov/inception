@@ -76,6 +76,7 @@ services:
       - .env
     ports:
       - "21:21"
+      - "10100-10110:10100-10110"
     volumes:
       - wp-data:/var/www/wordpress
     networks:
