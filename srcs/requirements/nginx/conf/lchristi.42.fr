@@ -1,5 +1,6 @@
 
 # lchristi.42.fr conf
+# add ${DOMAIN_NAME}
 
 server {
 

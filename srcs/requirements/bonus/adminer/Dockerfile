@@ -2,7 +2,7 @@
 FROM debian:buster
 
 RUN apt update && apt install -y --no-install-recommends \
-        wget php7.3 php-fpm php-mysql\
+        wget php7.3 php-fpm php-mysql procps\
         && rm -rf /var/lib/apt/lists/* \
         && mkdir -p var/www/ \
         &&  wget --no-check-certificate -O  /var/www/index.php \

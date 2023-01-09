@@ -7,7 +7,7 @@ BLUE 	= \033[0;34m
 NC		= \033[0;0m
 
 all:		
-			@echo -e "$(GREEN) \n make buid $(NC) for build project!"
+			@echo -e "$(GREEN) \n make build $(NC) for build project!"
 			@echo -e "$(GREEN) make up $(NC) for build and up project!"
 			@echo -e "$(GREEN) make down $(NC) for down project!"
 			@echo -e "$(RED) make prune $(NC) prune files!"
@@ -108,8 +108,8 @@ adminer:
 ftp:		
 			docker build -t ftp-inc ./srcs/requirements/bonus/ftp/
 			@echo -e "$(GREEN) build FTP $(NC)"
-			docker run -it -p 21:21 --rm ftp-inc bash
-			# docker run -p 21:21 --rm ftp-inc
+			# docker run -it -p 21:21 --rm ftp-inc bash
+			docker run -p 21:21 --rm ftp-inc
 
 redis:		
 			docker build -t redis-inc ./srcs/requirements/bonus/redis/

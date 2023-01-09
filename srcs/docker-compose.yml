@@ -66,19 +66,21 @@ services:
     networks:
       - docker-newtwork
 
-  # ftp:
-  #   build: ./requirements/bonus/ftp
-  #   image: ftp_inc
-  #   container_name: vsftpd
-  #   depends_on:
-  #     - wordpress
-  #   ports:
-  #     - "21:21"
-  #   volumes:
-  #     - wp-data:/var/www/
-  #   networks:
-  #    - docker-newtwork
-  #   restart: always
+  ftp:
+    build: ./requirements/bonus/ftp
+    image: ftp_inc
+    container_name: vsftpd
+    depends_on:
+      - wordpress
+    env_file:
+      - .env
+    ports:
+      - "21:21"
+    volumes:
+      - wp-data:/var/www/wordpress
+    networks:
+     - docker-newtwork
+    restart: always
         
 networks:
 

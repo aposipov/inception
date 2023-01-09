@@ -2,7 +2,7 @@
 FROM debian:buster
 
 RUN apt-get update\
-		&& apt-get install -y --no-install-recommends redis \
+		&& apt-get install -y --no-install-recommends redis procps \
 		&& rm -rf /var/lib/apt/lists/*
 
 # RUN sed -i "s|bind 127.0.0.1|#bind 127.0.0.1|g"  /etc/redis/redis.conf && \
