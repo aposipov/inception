@@ -122,6 +122,11 @@ cadvisor:
 			@echo -e "$(GREEN) build cadvisor $(NC)"
 			docker run --rm cadvisor-inc
 
+website:
+			docker build -t website-inc ./srcs/requirements/bonus/website/
+			@echo -e "$(GREEN) build website $(NC)"
+			docker run -p 8888:8888 --rm website-inc
+
 django:
 			docker build -t django-inc ./srcs/requirements/bonus/django/
 			@echo -e "$(GREEN) build Django $(NC)"
