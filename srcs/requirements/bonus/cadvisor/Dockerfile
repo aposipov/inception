@@ -10,4 +10,4 @@ RUN apt update && apt install -y --no-install-recommends \
         chmod +x ./usr/local/bin/cadvisor
 
 # CMD ["tail", "-f"]
-ENTRYPOINT [ "./usr/local/bin/cadvisor" ]
+ENTRYPOINT [ "./usr/local/bin/cadvisor", "--port=8090" ]

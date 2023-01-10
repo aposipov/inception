@@ -105,17 +105,17 @@ adminer:
 			# docker run -it -p 8080:8080 --rm adminer-inc bash
 			docker run -p 8080:8080 --rm adminer-inc
 
-ftp:		
-			docker build -t ftp-inc ./srcs/requirements/bonus/ftp/
-			@echo -e "$(GREEN) build FTP $(NC)"
-			# docker run -it -p 21:21 --rm ftp-inc bash
-			docker run -p 21:21 --rm ftp-inc
-
 redis:		
 			docker build -t redis-inc ./srcs/requirements/bonus/redis/
 			@echo -e "$(GREEN) build Redis $(NC)"
 			docker run -it --rm redis-inc bash
 			# docker run --rm redis-inc
+
+ftp:		
+			docker build -t ftp-inc ./srcs/requirements/bonus/ftp/
+			@echo -e "$(GREEN) build FTP $(NC)"
+			# docker run -it -p 21:21 --rm ftp-inc bash
+			docker run -p 21:21 --rm ftp-inc
 
 cadvisor:
 			docker build -t cadvisor-inc ./srcs/requirements/bonus/cadvisor/

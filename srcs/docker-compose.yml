@@ -7,7 +7,7 @@ services:
     build: ./requirements/mariadb
     image: mariadb_inc
     container_name: mariadb
-    restart: always
+    restart: unless-stopped
     env_file:
       - .env
     volumes:
@@ -21,7 +21,7 @@ services:
     container_name: wordpress
     depends_on:
       - mariadb
-    restart: always
+    restart: unless-stopped
     volumes:
       - wp-data:/var/www/wordpress/
     env_file:
@@ -35,7 +35,7 @@ services:
     container_name: nginx
     depends_on:
       - wordpress
-    restart: always
+    restart: unless-stopped
     env_file:
       - .env
     volumes:
@@ -52,7 +52,7 @@ services:
     container_name: adminer
     depends_on:
       - mariadb
-    restart: always
+    restart: unless-stopped
     ports:
       - "8080:8080"
     networks:
@@ -62,7 +62,7 @@ services:
     build: ./requirements/bonus/redis
     image: redis_inc
     container_name: redis
-    restart: always
+    restart: unless-stopped
     networks:
       - docker-newtwork
 
@@ -81,8 +81,32 @@ services:
       - wp-data:/var/www/wordpress
     networks:
      - docker-newtwork
-    restart: always
-        
+    restart: unless-stopped
+
+  # website:
+
+  cadvisor:
+    build: ./requirements/bonus/cadvisor
+    image: cadvisor_inc
+    container_name: cadvisor
+    depends_on:
+      - nginx
+      - mariadb
+      - wordpress
+      - adminer
+      - ftp
+    ports:
+      - "8090:8090"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+    networks:
+      - docker-network
+    restart: unless-stopped
+
 networks:
 
   docker-newtwork:
