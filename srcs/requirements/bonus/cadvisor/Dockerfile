@@ -2,7 +2,12 @@
 FROM debian:buster
 
 RUN apt update && apt install -y --no-install-recommends \
-        cadvisor &&\
-        rm -rf /var/lib/apt/lists/* &&\ 
+        procps wget &&\
+        rm -rf /var/lib/apt/lists/* &&\
+        wget --no-check-certificate -O /usr/local/bin/cadvisor \
+        https://github.com/google/cadvisor/releases/download/v0.37.5/cadvisor &&\
+        # https://github.com/google/cadvisor/releases/download/v0.47.0/cadvisor-v0.47.0-linux-amd64 &&\
+        chmod +x ./usr/local/bin/cadvisor
 
-CDM ["tail", "f"]
+# CMD ["tail", "-f"]
+ENTRYPOINT [ "./usr/local/bin/cadvisor" ]

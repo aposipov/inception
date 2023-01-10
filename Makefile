@@ -118,9 +118,9 @@ redis:
 			# docker run --rm redis-inc
 
 cadvisor:
-			docker build -t cadvisor-inc ./srcs/requirements/mariadb/
+			docker build -t cadvisor-inc ./srcs/requirements/bonus/cadvisor/
 			@echo -e "$(GREEN) build cadvisor $(NC)"
-			docker run --env-file ./srcs/.env --rm cadvisor-inc
+			docker run --rm cadvisor-inc
 
 django:
 			docker build -t django-inc ./srcs/requirements/bonus/django/

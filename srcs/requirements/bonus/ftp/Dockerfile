@@ -12,3 +12,5 @@ RUN apt update && apt install -y --no-install-recommends \
 COPY ./conf/vsftpd.conf /etc/vsftpd.conf
 
 ENTRYPOINT [ "./tmp/setup.sh" ]
+
+CMD [ "/usr/sbin/vsftpd", "/etc/vsftpd.conf" ]
