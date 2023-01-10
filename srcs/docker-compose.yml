@@ -104,7 +104,7 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
       - /dev/disk/:/dev/disk:ro
     networks:
-      - docker-network
+     - docker-newtwork
     restart: unless-stopped
 
 networks:
