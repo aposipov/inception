@@ -43,7 +43,7 @@ server {
     }
 
     location /website {
-       proxy_pass http://lchristi.42.fr:8888;
+       return 301 http://lchristi.42.fr:8888;
     }
 
     location ~ \.php$ { 

@@ -44,8 +44,8 @@ clean-dir:
 
 pre_eval:
 			@echo -e "$(RED) pre evaluation $(NC)"
-			chmod +x ./srcs/tools/pre_eval.sh
-			./srcs/tools/pre_eval.sh
+			chmod +x ./srcs/requirements/tools/pre_eval.sh
+			./srcs/requirements/tools/pre_eval.sh
 prune:		
 			@echo -e "$(RED) docker prune -f $(NC)"
 			@docker system prune --all --force --volumes
