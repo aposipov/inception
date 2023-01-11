@@ -30,7 +30,7 @@ server {
     }
 
     location /adminer {
-       return 301 http://localhost:8080;
+       return 301 http://lchristi.42.fr:8080;
        #proxy_pass http://localhost:8080;
        #fastcgi_pass   adminer:8080;
        #fastcgi_index  index.php;
@@ -39,9 +39,12 @@ server {
     }
 
     location /cadvisor {
-       return 301 http://localhost:8090;
+       return 301 http://lchristi.42.fr:8090;
     }
 
+    location /website {
+       proxy_pass http://lchristi.42.fr:8888;
+    }
 
     location ~ \.php$ { 
         fastcgi_pass wordpress:9000;
