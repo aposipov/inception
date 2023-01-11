@@ -9,5 +9,4 @@ RUN apt update && apt install -y --no-install-recommends \
         # https://github.com/google/cadvisor/releases/download/v0.47.0/cadvisor-v0.47.0-linux-amd64 &&\
         chmod +x ./usr/local/bin/cadvisor
 
-# CMD ["tail", "-f"]
 ENTRYPOINT [ "./usr/local/bin/cadvisor", "--port=8090" ]
