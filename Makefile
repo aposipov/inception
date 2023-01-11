@@ -32,8 +32,6 @@ up:			create-dir
 
 down:		
 			docker-compose -f ./srcs/docker-compose.yml down
-
-create-cert:
 			
 create-dir:	
 			@echo -e "$(GREEN) Create data directories $(NC)"
@@ -44,38 +42,13 @@ clean-dir:
 			@echo -e "$(RED) Delete data directories $(NC)"
 			@sudo rm -rf /home/${USER}/data/
 
-cleanX:
-			$(RM) $(OBJ)
-			@echo -e "$(RED)*.o files is clean!$(NC)"
-
-fcleanX:		clean
-			$(RM) $(NAME)
-			@echo -e "$(RED)All files is clean!$(NC)"
-
-reX:			fclean all
-
 pre_eval:
-			docker stop $(docker ps -qa) \
-			|| docker rm $(docker ps -qa) \
-			|| docker rmi -f $(docker images -qa) \
-			|| docker volume rm $(docker volume ls -q) \
-			|| docker network rm $(docker network ls -q) 2> /dev/null
-			#clean dir
+			@echo -e "$(RED) pre evaluation $(NC)"
+			chmod +x ./srcs/tools/pre_eval.sh
+			./srcs/tools/pre_eval.sh
 prune:		
 			@echo -e "$(RED) docker prune -f $(NC)"
 			@docker system prune --all --force --volumes
-
-portainer:	
-			docker volume create portainer_data
-			docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always\
-			-v /var/run/docker.sock:/var/run/docker.sock\
-			-v portainer_data:/data portainer/portainer-ce:2.11.1
-
-yacht:		
-			docker volume create yacht
-			docker run -d -p 8008:8008 -v /var/run/docker.sock:/var/run/docker.sock\
-			 -v yacht:/config --name yacht selfhostedpro/yacht
-			 #admin@yacht.local pass
 
 ####################################DEBUG#######################################
 
@@ -132,3 +105,15 @@ django:
 			@echo -e "$(GREEN) build Django $(NC)"
 			# docker run -it -p 8001:8001 --rm django-inc bash
 			docker run -p 8001:8001 --rm django-inc
+
+portainer:	
+			docker volume create portainer_data
+			docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always\
+			-v /var/run/docker.sock:/var/run/docker.sock\
+			-v portainer_data:/data portainer/portainer-ce:2.11.1
+
+yacht:		
+			docker volume create yacht
+			docker run -d -p 8008:8008 -v /var/run/docker.sock:/var/run/docker.sock\
+			 -v yacht:/config --name yacht selfhostedpro/yacht
+			 #admin@yacht.local pass

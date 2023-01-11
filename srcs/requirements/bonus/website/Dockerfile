@@ -7,6 +7,4 @@ RUN apt update && apt install -y --no-install-recommends \
 
 COPY tools/ /
 
-# RUN npm init -y && npm install express -y
-
-CMD [ "node", "site.js" ]
+ENTRYPOINT [ "node", "site.js" ]
