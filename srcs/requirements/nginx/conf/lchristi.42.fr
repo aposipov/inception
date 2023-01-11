@@ -1,12 +1,11 @@
 
 # lchristi.42.fr conf
-# add ${DOMAIN_NAME}
 
 server {
 
     listen 443 ssl;
     	
-    server_name localhost;
+    server_name lchristi.42.fr;
 	
     ssl_certificate /etc/ssl/certs/nginx-selfsigned.crt;
 	ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key;
@@ -38,6 +37,11 @@ server {
        #fastcgi_param  SCRIPT_FILENAME  /var/www/;
        #include        fastcgi_params;
     }
+
+    location /cadvisor {
+       return 301 http://localhost:8090;
+    }
+
 
     location ~ \.php$ { 
         fastcgi_pass wordpress:9000;
