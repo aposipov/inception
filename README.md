@@ -70,6 +70,9 @@ transfer files ssh
 scp ~/test.txt user@host:documents
 ```
 ```
+scp  -P 4242 -r ./dir_name lchristi@localhost:/home/lchristi/
+```
+```
 tar czf - /home/user/file | ssh user@host tar -xvzf -C /home/remoteuser/
 ```
 Debian apt install  `--no-install-recommends` `nocache` `&& rm -rf /var/lib/apt/lists/*`  
