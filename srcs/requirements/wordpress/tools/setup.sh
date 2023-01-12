@@ -1,6 +1,5 @@
 #!/bin/bash
 echo "***START SETUP WP***"
-
 chown -R www-data:www-data /var/www/*
 chmod -R 755 /var/www/*
 if [ ! -f /var/www/wordpress/wp-config.php ]; then
@@ -28,8 +27,5 @@ wp config set --allow-root --path="/var//www/wordpress/" WP_REDIS_PORT 6379 --ra
 wp config set --allow-root --path="/var//www/wordpress/" WP_REDIS_DATABASE 0 --raw
 wp config set --allow-root --path="/var//www/wordpress/" WP_CACHE true --raw
 fi
-
 echo "***START PHP_FPM***"
 exec /usr/sbin/php-fpm7.3 -F
-# tail -f
-# /usr/sbin/php-fpm7.3 --nodaemonize

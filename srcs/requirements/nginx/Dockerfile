@@ -15,7 +15,3 @@ COPY conf/lchristi.42.fr /etc/nginx/sites-available/
 RUN ln -s /etc/nginx/sites-available/lchristi.42.fr /etc/nginx/sites-enabled/lchristi.42.fr
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
-
-# conf +
-# ssl certif +
-# install -y procps htop
